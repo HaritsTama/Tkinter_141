@@ -24,18 +24,26 @@ judul_label.pack(pady=30) # Letakkan label judul dengan padding vertikal 20 piks
 frame_input = tk.Frame(root, bg="#f0f0f0")
 frame_input.pack(pady=10)
 
+# Daftar untuk menyimpan objek entry input nilai mata pelajaran
 entries = []
-for i in range(10) :
+for i in range(10) : # Loop untuk 10 kali
+
+    # Label untuk masing-masing mata pelajaran
     label = tk.Label(frame_input, text=f"Nilai Mata Pelajaran {i + 1}:", font=("Arial", 12), bg="#f0f0f0")
     label.grid(row=i, column=0, padx=10, pady=5, sticky="e")
+
+    # Entry untuk input nilai mata pelajaran
     entry = tk.Entry(frame_input, width=10, font=("Arial", 12))
     entry.grid(row=i, column=1, padx=10, pady=5)
-    entries.append(entry)
+    entries.append(entry) # Tambahkan entry ke dalam daftar entries
 
+
+# Tombol untuk menjalankan fungsi hasil_prediksi
 prediksi_button = tk.Button(root, text="Hasil Prediksi", command=hasil_prediksi, font=("Arial", 12, "bold"), bg="#f0f0f0")
 prediksi_button.pack(padx=30)
 
+# Label untuk menampilkan hasil prediksi
 hasil_label = tk.Label(root, text="", font=("Arial", 14, "italic", "bold"), fg="blue", bg="#f0f0f0")
 hasil_label.pack(pady=20)
 
-root.mainloop()
+root.mainloop()# Menjalankan loop utama aplikasi
